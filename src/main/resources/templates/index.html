@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Hotel Booking </title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script type="text/javascript" src="/static/app.js" th:src="@{/app.js}"></script>
+    </head>
+<body ng-app="myApp" ng-controller="myCtrl">
+
+<div class="container">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Hotel Booking</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">Page 1</a></li>
+                <li><a href="#">Page 2</a></li>
+
+            </ul>
+            <ul class="nav navbar-nav navbar-right" >
+                <li><a href="#"><span class="glyphicon glyphicon-user"> </span> </a></li>
+
+            </ul>
+        </div>
+    </nav>
+           <table class="table table-hover">
+            <thead>
+            <tr>
+                <th>Hotel</th>
+                <th>No.of nights</th>
+                <th>Price/Night</th>
+                <th>Total Price</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="booking in bookings">
+                <td>{{booking.hotelName}}</td>
+                <td>{{booking.nbOfNights}}</td>
+                <td>{{booking.pricePerNight}}</td>
+                <td>{{booking.totalPrice}}</td>
+            </tr>
+
+            </tbody>
+        </table>
+</div>
+</body>
+</html>
